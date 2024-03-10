@@ -22,6 +22,10 @@ const config: DocsThemeConfig = {
     text: "Vertex Scripts Documentation",
   },
   primaryHue: 7,
+  darkMode: true,
+  nextThemes: {
+    defaultTheme: "dark",
+  },
   useNextSeoProps() {
     return {
       titleTemplate: "%s - Vertex Scripts",
