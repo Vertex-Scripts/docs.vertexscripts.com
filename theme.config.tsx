@@ -22,6 +22,18 @@ const config: DocsThemeConfig = {
     text: "Vertex Scripts Documentation",
   },
   primaryHue: 7,
+  useNextSeoProps() {
+    return {
+      titleTemplate: "%s - Vertex Scripts",
+      description: "Documentation for https://vertexscripts.com",
+    };
+  },
+  head: (
+    <>
+      <link rel="icon" href="/favicon.ico" />
+      <meta name="theme-color" content="#ff0000" />
+    </>
+  ),
 };
 
 export default config;
