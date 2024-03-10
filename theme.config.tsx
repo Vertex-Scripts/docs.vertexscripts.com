@@ -1,18 +1,27 @@
-import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
+import React from "react";
+import Image from "next/image";
+
+import { DocsThemeConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
-  logo: <span>My Project</span>,
+  logo: (
+    <div style={{ display: "flex", gap: "10px" }}>
+      <Image src="/logo.png" alt="Vertex Scripts" width={30} height={30} />
+      <span style={{ fontWeight: "semi-bold" }}>Vertex Scripts</span>
+    </div>
+  ),
   project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
+    link: "https://github.com/Vertex-Scripts/docs.vertexscripts.com",
   },
   chat: {
-    link: 'https://discord.com',
+    link: "https://discord.gg/vertexscripts",
   },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase:
+    "https://github.com/Vertex-Scripts/docs.vertexscripts.com",
   footer: {
-    text: 'Nextra Docs Template',
+    text: "Vertex Scripts Documentation",
   },
-}
+  primaryHue: 7,
+};
 
-export default config
+export default config;
