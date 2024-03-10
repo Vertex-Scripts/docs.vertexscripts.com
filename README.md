@@ -1,23 +1,11 @@
-# Nextra Docs Template 
+# Vertex Scripts
+Official documentation website for https://vertexscripts.com
 
-This is a template for creating documentation with [Nextra](https://nextra.site).
+## Get Started
+Make sure you have [pnpm](https://pnpm.io/) installed.
 
-[**Live Demo →**](https://nextra-docs-template.vercel.app)
+1. Run `pnpm i` to install dependencies.
+2. Run `pnpm dev` to run locally and go to [localhost:3000](https://localhost:3000)
 
-[![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
-
-## Quick Start
-
-Click the button to clone this repository and deploy it on Vercel:
-
-[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
-
-## Local Development
-
-First, run `pnpm i` to install the dependencies.
-
-Then, run `pnpm dev` to start the development server and visit localhost:3000.
-
-## License
-
-This project is licensed under the MIT License.
+## Contribution
+Any type of contribution is greatly appreciated!
