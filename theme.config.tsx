@@ -17,7 +17,7 @@ const config: DocsThemeConfig = {
     link: "https://discord.gg/vertexscripts",
   },
   docsRepositoryBase:
-    "https://github.com/Vertex-Scripts/docs.vertexscripts.com",
+    "https://github.com/Vertex-Scripts/docs.vertexscripts.com/tree/main",
   footer: {
     text: "Vertex Scripts Documentation",
   },
