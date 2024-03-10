@@ -1,6 +1,7 @@
 {
   "index": "Introduction",
   "scripts": "Scripts",
+  "vx_lib": "Vx Lib",
   "about": {
     "title": "About",
     "type": "page"
