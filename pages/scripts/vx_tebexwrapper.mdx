@@ -7,10 +7,9 @@ This assumes you already have a tebex store online, if not you can create one an
 
 1. Download the latest release of vx_lib [here](https://github.com/Vertex-Scripts/vx_lib) and add it to your server.
 2. Download the latest version of our tebex wrapper from [keymaster](https://keymaster.fivem.net/assets?search=cfx_tebexwrapper) and add it to your server.
-3. Setup the config, the only thing that is required to do is to set a secret, you can make this whatever you want but make sure it's secure.
-4. Create a package, scroll all the way down and click on "Game Server Commands" and add `vx_tebexwrapper:addCoins {hexid} [amount] secret`.
-So for example if your secret is `abcdef` and you have a package of 10 coins your command would be: `vx_tebexwrapper:addCoins {hexid} 10 abcdef`.
-5. Start vx_lib and cfx_tebexwrapper in your server.cfg and you're good to go!
+3. Setup the config, the only things that is required is: `Config.tebexSecret` and `Config.packages`.
+4. Create a package, scroll all the way down and click on "Game Server Commands" and add `vx_tebexwrapper:processPayment {transaction}`.
+5. Start vx_lib and vx_tebexwrapper in your server.cfg and you're good to go!
 
 ## Adding new categories
 All the products are organized in categories in the data folder. You need to create a new file for each category, for example `data/items.lua` and add the following:
@@ -58,7 +57,7 @@ return {
 We have already implemented some basic products such as: `money`, `item`, `vehicle`, `weapon` and more, but you can also create your own!
 We created a handler system, so for each product type you can create a handler which will handle the purchase of the product.
 
-To create a handler you need to go to `src/server/handlers.lua`, and add a new handler. For example:
+To create a handler you need to go to `customize/handlers.lua`, and add a new handler. For example:
 ```lua
 registerProductHandler("item", function(source, product)
 	local item = product.metadata.item
@@ -67,3 +66,15 @@ registerProductHandler("item", function(source, product)
 	vx.inventory.addItem(source, item, count)
 end)
 ```
+
+## Migrating from V1
+
+### Config
+This step is pretty straight forward, you can just copy the `data` folder and configure the config.
+
+### Database
+1. Remove the `vx_tebexwrapper_transactions` or `vx_tebexwrapper_transactions` table. (it wasn't used anyway)
+2. Rename the `cfx_tebexwrapper_coins` to `vx_tebexwrapper_coins`.
+
+For very old versions, the length of the identifier column was `46` now it's `128`. You can just change the length of the column in the database.
+Need help? [Contact us](https://discord.gg/vertexscripts).
