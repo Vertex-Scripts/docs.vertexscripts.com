@@ -68,9 +68,11 @@ end)
 ```
 
 ## Migrating from V1
+You don't need to change anything in your `data` folder, so just copy it over.
 
-### Config
-This step is pretty straight forward, you can just copy the `data` folder and configure the config.
+### Tebex
+For every product, the command needs to be changed to from `vx_tebexwrapper:addCoins {hexid} [amount] secret` to `vx_tebexwrapper:processPayment {transaction}`.
+All the tebex packages should be defined in `Config.packages` in `config.server.lua`.
 
 ### Database
 1. Remove the `vx_tebexwrapper_transactions` or `vx_tebexwrapper_transactions` table. (it wasn't used anyway)
