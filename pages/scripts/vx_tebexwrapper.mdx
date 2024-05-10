@@ -60,7 +60,7 @@ We created a handler system, so for each product type you can create a handler w
 
 To create a handler you need to go to `customize/handlers.lua`, and add a new handler. For example:
 ```lua
-registerProductHandler("item", function(source, product)
+handlers.registerProductHandler("item", function(source, product)
 	local item = product.metadata.item
 	local count = product.metadata.count or 1
 
