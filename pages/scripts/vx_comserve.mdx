@@ -1,0 +1,19 @@
+# Community Service
+A script for admins to send people on community service to do certain tasks.
+
+## Installation
+1. Put the `vx_comserve` folder in your `resources` folder.
+2. Add `ensure vx_comserve` to your `server.cfg`.
+3. Start the script
+
+## Exports
+
+### Server
+
+```lua
+function setOfflineComserve(admin: string|number, identifier: string, reason: string, tasks: number);
+function setCommunityService(playerId: number, targetId: number, reason: string, tasks: number);
+
+exports["vx_comserve"]:setOfflineComserve(admin, identifier, reason, tasks)
+exports["vx_comserve"]:setCommunityService(playerId, targetId, reason, tasks)
+```
