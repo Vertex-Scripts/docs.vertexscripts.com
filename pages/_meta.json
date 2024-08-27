@@ -1,7 +1,7 @@
 {
   "index": "Introduction",
   "scripts": "Scripts",
-  "lib": "vx_lib",
+  "lib": "vx_lib (TODO)",
   "about": {
     "title": "About",
     "type": "page"
