@@ -1,0 +1,46 @@
+---
+title: Server
+description: Makes a request to a url and returns the response.
+---
+
+## Classes
+
+### VxHttpResponse
+
+- status: `number`
+- ok: `boolean`
+  - True if the status code is > 199 and < 300
+- data?: `table`
+- errorText?: `string`
+- headers: `table<string, any>`
+
+### VxHttpRequest
+
+- method: `string`
+  - "GET" | "POST" | "PUT" | "DELETE" | "PATCH"
+- body?: `any`
+- headers?: `table<string, any>`
+
+## vx.sendHttpRequest
+
+```lua
+vx.sendHttpRequest(request)
+```
+
+- request: `VxHttpRequest`
+- Returns: `VxHttpResponse`
+
+## Example
+
+```lua
+local response = vx.sendHttpRequest({
+  method = "GET",
+  url = "https://jsonplaceholder.typicode.com/todos/1",
+})
+
+local response = vx.sendHttpRequest(webhook, {
+  method = "POST",
+  body = json.encode(embed),
+  headers = { ['Content-Type'] = 'application/json' }
+})
+```

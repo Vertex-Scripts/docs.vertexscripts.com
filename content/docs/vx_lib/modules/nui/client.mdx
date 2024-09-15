@@ -1,0 +1,24 @@
+---
+title: Client
+description: Some utilities for NUI
+---
+
+## Functions
+
+### vx.sendNuiAction(action, data)
+
+This function will send a NUI message in json in the following format:
+
+```json
+{
+  "action": action,
+  "data": data
+}
+```
+
+```lua
+vx.sendNuiAction(action, data)
+```
+
+- action: `string`
+- data: `any`

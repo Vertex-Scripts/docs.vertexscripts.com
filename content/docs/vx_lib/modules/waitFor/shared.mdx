@@ -1,0 +1,26 @@
+---
+title: Shared
+description: Calls function repeatedly until it returns a non-nil value.
+---
+
+## vx.waitFor
+
+```lua
+vx.watFor(func, errorMessage, timeout)
+```
+
+- func: `function`
+  - A function to call each frame.
+- errorMessage?: `string`
+  - The error message to throw if the function times out.
+- timeout?: `number`
+
+## Example
+
+```lua
+local value -- [['abc']] = vx.waitFor(function()
+  if math.random(0, 1) == 1 then
+    return "abc"
+  end
+end)
+```

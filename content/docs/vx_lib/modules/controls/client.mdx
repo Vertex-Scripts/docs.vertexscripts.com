@@ -1,0 +1,49 @@
+---
+title: Shared
+description: Typesafe functions to check if a control is released/pressed
+---
+
+## Functions
+
+### vx.isControlJustReleased
+
+```lua
+vx.isControlJustReleased(key, padIndex)
+```
+
+- key: `VxKeyName` | `number`
+- padIndex?: `number`
+
+### vx.isControlJustPressed
+
+```lua
+vx.isControlJustPressed(key, padIndex)
+```
+
+- key: `VxKeyName` | `number`
+- padIndex?: `number`
+
+### vx.isControlInteractedWith
+
+_Used internally_
+
+```lua
+vx.isControlInteractedWith(func, key, padIndex)
+```
+
+- func: `fun(padIndex: number, keyCode: number)`
+- key: `VxKeyName` | `number`
+- padIndex?: `number`
+
+## Example
+
+```lua
+Citizen.CreateThread(function()
+  Citizen.Wait(1)
+
+  -- You can use an actual key like 'E' or the number
+  if vx.isControlJustPressed("E") then
+    print("E is pressed")
+  end
+end)
+```

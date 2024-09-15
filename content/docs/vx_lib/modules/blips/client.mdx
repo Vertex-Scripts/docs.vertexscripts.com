@@ -1,0 +1,112 @@
+---
+title: Client
+description: Modules for blips
+---
+
+import { TypeTable } from "fumadocs-ui/components/type-table";
+
+## Functions
+
+### vx.addBlipForCoords
+
+```lua
+vx.addBlipForCoords(coords, options)
+```
+
+### vx.addBlipForRadius
+
+```lua
+vx.addBlipForRadius(radius, options)
+```
+
+### vx.addBlipForEntity
+
+```lua
+vx.addBlipForEntity(entity, options)
+```
+
+### vx.addBlipForArea
+
+```lua
+vx.addBlipForArea(area, options)
+```
+
+## Classes
+
+### VxBlipOptions
+
+<TypeTable
+  type={{
+    coords: {
+      description: "The coordinates of the blip",
+      type: "vector3",
+      default: null,
+    },
+    sprite: {
+      description: "The sprite icon of the blip",
+      type: "number",
+      default: null,
+    },
+    color: {
+      description: "The color of the blip",
+      type: "number",
+      default: null,
+    },
+    text: {
+      description: "The display text of the blip",
+      type: "string",
+      default: null,
+    },
+    scale: {
+      description: "The size scale of the blip",
+      type: "number",
+      default: null,
+    },
+    isFlashing: {
+      description: "If the blip is flashing",
+      type: "boolean",
+      default: false,
+    },
+    shortRange: {
+      description: "If the blip is only visible in close range",
+      type: "boolean",
+      default: false,
+    },
+  }}
+/>
+
+### RadiusBlipOptions : VxBlipOptions
+
+<TypeTable
+  type={{
+    radius: {
+      description: "The radius of the blip",
+      type: "number",
+      default: null,
+    },
+  }}
+/>
+
+### EntityBlipOptions : VxBlipOptions
+
+<TypeTable
+  type={{
+    entity: {
+      description: "The entity for the blip",
+      type: "number",
+      default: null,
+    },
+  }}
+/>
+
+### AreaBlipOptions : VxBlipOptions
+
+<TypeTable
+  type={{
+    area: {
+      description: "The area of the blip",
+      type: "vector2",
+      default: null,
+    },
+  }}
+/>

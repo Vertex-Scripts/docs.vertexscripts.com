@@ -1,0 +1,24 @@
+---
+title: Shared
+description: Checks if a resource is using a specific version or higher, or else throws an error.
+---
+
+## vx.checkDependency
+
+```lua
+vx.checkDependency(resource, version, printMessage)
+```
+
+- resource: `string`
+- version: `string`
+- printMessage?: `boolean`
+  - If true it will return wether the resource is using the version or not, if false it will throw an error.
+  - Default: `false`
+
+## Example
+
+```lua
+if not vx.checkDependency("vx_lib", "1.2.2", true) then
+  return
+end
+```

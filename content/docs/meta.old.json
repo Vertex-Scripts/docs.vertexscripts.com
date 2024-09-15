@@ -1,0 +1,27 @@
+{
+  "title": "VX Lib",
+  "root": true,
+  "pages": [
+    "---Scripts---",
+    "scripts/vx_tebexwrapper",
+    "scripts/vx_comserve",
+    "scripts/vx_atmrobbery",
+    "scripts/vx_cardealer",
+    "scripts/vx_drugs",
+    "scripts/vx_fixkit",
+    "scripts/vx_garage",
+    "scripts/vx_hud",
+    "scripts/vx_jail",
+    "scripts/vx_juwelry",
+    "scripts/vx_notify",
+    "scripts/vx_reports",
+    "scripts/vx_safezones",
+    "scripts/vx_staffduty",
+    "scripts/vx_storerobbery",
+    "scripts/vx_vehiclelock",
+    "scripts/vx_weathersync",
+    "---Vx Lib---",
+    "vx_lib/bridge",
+    "vx_lib/modules"
+  ]
+}

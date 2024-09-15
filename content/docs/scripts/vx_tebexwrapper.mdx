@@ -1,0 +1,76 @@
+---
+title: Tebex Wrapper
+description: In-game store where players can purchase products with coins
+---
+
+## Installation
+
+This assumes you already have a tebex store online, if not you can create one and if you need help make sure to ask us!
+Tutorial to setup your tebex store: https://www.youtube.com/watch?v=it-eiJDwV5E
+
+1. Download the latest release of vx_lib [here](https://github.com/Vertex-Scripts/vx_lib) and add it to your server.
+2. Download the latest version of our tebex wrapper from [keymaster](https://keymaster.fivem.net/assets?search=cfx_tebexwrapper) and add it to your server.
+3. Setup the config, the only things that is required is: `Config.tebexSecret` and `Config.packages`.
+4. Create a package, scroll all the way down and click on "Game Server Commands" and add `vx_tebexwrapper:processPayment {transaction}`.
+5. Start vx_lib and vx_tebexwrapper in your server.cfg and you're good to go!
+
+## Adding new categories
+
+All the products are organized in categories in the data folder. You need to create a new file for each category, for example `data/items.lua` and add the following:
+
+```lua
+return {
+	{
+		name = "phone",
+		label = "Phone",
+		description = "Iphone 13+",
+		price = 1,
+		image = "iphone.jpg",
+		metadata = {
+			item = "phone",
+		}
+	},
+  -- ... more products
+}
+```
+
+Then you need to register this category in `data/categories.lua` and add the following:
+
+```lua {2,13-19}
+local carProducts = require "data.cars"
+local itemProducts = require "data.items"
+
+---@type Category[]
+return {
+	{
+		label = "🚗 Cars",
+		name = "Cars",
+		description = "...",
+		type = "vehicle",
+		products = carProducts,
+	},
+	{
+		label = "💼 Items",
+		name = "Items",
+		description = "...",
+		type = "item",
+		products = itemProducts,
+	},
+}
+```
+
+## Adding product handlers
+
+We have already implemented some basic products such as: `money`, `item`, `vehicle`, `weapon` and more, but you can also create your own!
+We created a handler system, so for each product type you can create a handler which will handle the purchase of the product.
+
+To create a handler you need to go to `customize/handlers.lua`, and add a new handler. For example:
+
+```lua
+handlers.registerProductHandler("item", function(source, product)
+	local item = product.metadata.item
+	local count = product.metadata.count or 1
+
+	vx.inventory.addItem(source, item, count)
+end)
+```

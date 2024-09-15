@@ -1,0 +1,24 @@
+---
+title: Shared
+description: Prints Messages to the console
+---
+
+## vx.print
+
+Values in the vararg will be converted to json.
+
+```lua
+vx.print.error(...)
+vx.print.warn(...)
+vx.print.info(...)
+vx.print.verbose(...)
+vx.print.debug(...)
+```
+
+## Config
+
+You can configure the log level in the convar set in your server configuration.
+
+```lua
+set vx:logLevel "info"
+```

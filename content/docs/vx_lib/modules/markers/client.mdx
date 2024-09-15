@@ -1,0 +1,39 @@
+---
+title: Client
+description: Simple way to create markers
+---
+
+## Classes
+
+### Marker
+
+- type: `string` | `number`
+  - This field accepts either a merical value representing the marker ID or a string containing the name of a marker documented on the [FiveM Docs](https://docs.fivem.net/docs/game-references/markers/)
+- coords: `vector3`
+- color?: `{ r: number, g: number, b: number, a: number }`
+- rotation?: `vector3`
+- rotate?: `boolean`
+- width?: `number`
+- length?: `number`
+
+## vx.markers.new(options)
+
+- options: `Marker`
+
+## Example
+
+```lua
+local marker = vx.markers.new({
+  type = 21,
+  coords = GetEntityCoords(vx.cache.ped),
+  color = { r = 255, g = 0, b = 0, a = 200 },
+})
+
+Citizen.CreateThread(function()
+	while true do
+		marker:draw()
+
+		Citizen.Wait(1)
+	end
+end)
+```

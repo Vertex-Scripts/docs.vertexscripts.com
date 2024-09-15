@@ -1,0 +1,27 @@
+---
+title: Shared
+description: Spawns a ped, on the client loads in the model and on the server waits for the ped to spawn.
+---
+
+## vx.spawnPed
+
+```lua
+vx.spawnPed(type, model, coords, heading, isNetwork, bScriptHostPed)
+```
+
+- type: `number`
+- model: `string` | `number`
+- coords: `vector3`
+- heading: `number`
+- isNetwork?: `boolean`
+  - Enabled by default on the server
+- bScriptHostPed?: `boolean`
+
+## Example
+
+```lua
+Citizen.CreateThread(function()
+  local ped = vx.spawnPed(0, "mp_m_freemode_01", vector3(0, 0, 0), 0, true)
+  print(ped)
+end)
+```

@@ -1,0 +1,26 @@
+---
+title: Shared
+description: Spawns a vehicle, on the client loads in the model and on the server waits for the vehicle to spawn.
+---
+
+## vx.createVehicle
+
+```lua
+vx.spawnPed(model, coords, heading, isNetwork, netMissionEntity)
+```
+
+- model: `string` | `number`
+- coords: `vector3`
+- heading: `number`
+- isNetwork?: `boolean`
+  - Enabled by default on the server
+- netMissionEntity?: `boolean`
+
+## Example
+
+```lua
+RegisterCommand("car", function()
+  local vehicle = vx.createVehicle("adder", vector3(0, 0, 0), 0, true)
+  TaskWarpPedIntoVehicle(vx.cache.ped, vehicle, -1)
+end)
+```

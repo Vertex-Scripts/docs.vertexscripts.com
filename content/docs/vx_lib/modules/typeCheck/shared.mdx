@@ -1,0 +1,25 @@
+---
+title: Shared
+description: Checks if a value is of a certain type
+---
+
+## vx.typeCheck
+
+```lua
+vx.typeCheck(name, value, expectedTypes)
+```
+
+- name: `string`
+- value: `any`
+- expectedTypes: `type` | `type[]`
+
+## Example
+
+```lua
+-- Works fine
+local world = { hello = 4 }
+vx.typeCheck("world", world, "table")
+
+-- Throws an error: expected world to have type 'string' (received table)
+vx.typeCheck("world", world, "string")
+```

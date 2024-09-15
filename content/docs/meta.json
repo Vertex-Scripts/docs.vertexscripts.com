@@ -1,0 +1,12 @@
+{
+  "title": "VX Lib",
+  "root": true,
+  "pages": [
+    "---Scripts---",
+    "scripts/vx_tebexwrapper",
+    "---Vx Lib---",
+    "vx_lib/configuration",
+    "vx_lib/bridge",
+    "vx_lib/modules"
+  ]
+}

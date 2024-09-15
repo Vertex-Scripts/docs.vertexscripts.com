@@ -1,0 +1,59 @@
+---
+title: Configuration
+description: Configuration for vx_lib
+---
+
+import { TypeTable } from "fumadocs-ui/components/type-table";
+
+## Convars
+
+<TypeTable
+  type={{
+    "vx:primaryIdentifier": {
+      description: "What identifier to use for the primary identifier.",
+      type: "string",
+      default: "license",
+    },
+    "vx:locale": {
+      description: "Default locale used for the locale module.",
+      type: "string",
+      default: "en",
+    },
+    "vx:logLevel": {
+      description:
+        "Default log level used for the print module. Accepted values: error, warn, info, verbose and debug.",
+      type: "string",
+      default: "info",
+    },
+    "vx:framework": {
+      description:
+        "Default framework used for the framework bridge. Accepted values: auto, esx and qb",
+      type: "string",
+      default: "auto",
+    },
+    "vx:inventory": {
+      description:
+        "Default inventory used for the inventory bridge. Accepted values: auto, ox_inventory, qs_inventory, es_extended and qb-inventory",
+      type: "string",
+      default: "auto",
+    },
+    "vx:target": {
+      description:
+        "Default target used for the target bridge. Accepted values: auto, ox_target, qb-target and qtarget",
+      type: "string",
+      default: "auto",
+    },
+    "vx:notification": {
+      description:
+        "Default notification used for the notify module. Accepted values: auto, ox_lib, es_extended and qb-core",
+      type: "string",
+      default: "auto",
+    },
+    "vx:terxtUi": {
+      description:
+        "Default notification used for the notify module. Accepted values: auto, ox_lib, es_extended and qb-core",
+      type: "string",
+      default: "auto",
+    },
+  }}
+/>
